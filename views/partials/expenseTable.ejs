@@ -1,0 +1,65 @@
+ <!-- Expense Part Start -->
+ <div id="expense-table">
+    <div id="expense-list-headers">
+        <div class="d1">Sr.No</div>
+        <div class="d2">Expense</div>
+        <div class="d3" >Amount</div>
+        <div class="d4">Time</div>
+        <div class="d5">Date</div>
+    </div>
+<% for ( i = 0 ; i < expenses.length ; i++) {%>
+<% let date = new Date( expenses[i].dateAndTime) %>
+<% let hours = date.getHours() %> 
+<% let mins = date.getMinutes() %>
+<% let day = date.getDate() %>
+<% let month = date.getMonth() %>
+<% if ( mins < 10){%>
+    <% mins = "0"+mins %>
+<%}%>
+
+<% if ( hours < 10) {%>
+    <% hours = "0"+hours %>
+<%}%>
+
+<%if ( day < 10){%> 
+    <% day = "0"+day %>
+<%}%>
+
+<%if ( month < 10){%> 
+    <% month = "0"+( month + 1 )%>
+<%}%>
+
+<%if ( month > 9){%> 
+    <% month = month + 1%>
+<%}%>
+
+    <div id="expense-list">
+        <div class="expense-entry">
+            <div class="d1"><%= i+1 %></div>
+
+            <div class="d2"><%= expenses[i].expense %></div>
+
+            <div class="d3"><%= expenses[i].expenseAmount %></div>
+
+            <div class="d4"><%= hours %>:<%= mins %></div>
+
+            <div class="d5"><%=day%>/<%=month%>/<%= date.getFullYear() %></div>
+
+            <div class="divDel">
+                <form action="/expense/<%=expenses[i].item_id%>/delete?_method=DELETE" method="post">
+                    <button class="btnDelete">Delete</button>
+                </form>
+            </div>
+
+            <div class="divEdit">
+                <form action="/expense/<%=expenses[i].item_id%>/edit" method="get">
+                    <button class="btnEdit">Edit</button>
+                </form>
+            </div>
+        </div>
+           
+    </div>
+<% } %>
+</div>
+
+<!-- Expense Part End -->

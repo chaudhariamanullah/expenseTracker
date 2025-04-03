@@ -1,0 +1,33 @@
+form{
+    width: 50%;
+    height: 70%;
+    margin: auto;
+    border: 2px solid #2C3E50;
+    background-color: #F4F4F6;
+    border-radius: 30px;
+    padding: 30px;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+input{
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    padding: 10px;
+    border: 3px solid #2C3E50;
+    outline: none;
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+
+button{
+    height: 60px;
+    width: 150px;
+    margin-top: 10px;
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: #2C3E50;
+    color: white;
+    font-size: 2rem;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Expenses</title>
+    <style>
+        div{
+            display: flex;
+            background-color: #EAECEE;
+            width: 30%;
+            height: 4rem;
+            border: 2px solid #34495E;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+            color: #34495E;
+        }
+
+        div form button{
+            height: 2rem;
+            width:5rem;
+            border: 2px solid #34495E;
+            border-radius: 5px;
+            font-size: 1.25rem;
+            color:#212c37;
+        }
+    </style>
+</head>
+<body>
+    <h1>Expens Dates</h1>
+
+    <% for ( date of dates){ %>
+        <div>
+            <span><%=date.DATE.toString().slice(0,15)%></span>
+            &nbsp;&nbsp;&nbsp;
+            <% formattedDate = new Date(date.DATE).toLocaleDateString().split("T")[0].replaceAll("/","-") %>
+                <form action="/expense/<%= formattedDate %>/pie" method="get">
+                    <button>
+                    View
+                    </button>
+                </form>
+        </div>
+    <% } %>
+</body>
+</html>

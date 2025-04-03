@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Chart</title>
+    <link rel="stylesheet" href="/CSS/chart.css">
+</head>
+<body>
+    <div class="container">
+        
+    </div>
+
+
+    <!-- JavaScript -->
+     <%
+     <script>
+        let result = <%- JSON.stringify(result) %>;
+        let dateStr;
+        let day;
+        let mon;
+        let year;
+        for ( i = 0 ; i < result.length ; i++){
+            let date = new Date(result[i].formatted_date);
+            day = date.getDate();
+            mon = date.getMonth();
+            year = date.getFullYear();
+            dateStr[i] = day + mon + year ;
+        }
+     </script>
+     %>
+</body>
+</html>

@@ -1,0 +1,37 @@
+ <!-- Nav Bar -->
+ <div id="nav">
+
+    <div id="logo">
+        <h4>Expense Tracker</h4>
+    </div>
+
+    <div id="add">
+        <form action="/expense/new" method="get">
+            <button>New <i class="fa-solid fa-plus"></i></button>
+        </form>
+    </div>
+
+    <% if (!user){ %>
+    <div id="loginDiv">
+        <form action="/expense/login" method="get">
+            <button class="logSign">Login</button>
+        </form>
+    </div>
+
+    <div id="signupDiv">
+        <form action="/expense/signup" method="get">
+            <button class="logSign">Signup</button>
+        </form>
+    </div>
+   <% } %>
+
+   <% if (user){ %>
+        <div id="logoutDiv">
+            <form action="/expense/logout" method="get">
+                <button class="logoutSign">Logout</button>
+            </form>
+        </div>
+  <%}%>
+</div>
+
+<!-- Nav Bar -->

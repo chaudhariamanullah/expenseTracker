@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 90vh; 
+            width:100% ; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #2C3E50;
+            border-radius: 10px;
+        }
+        body{
+            background-color: #EAECEE;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <canvas id="pie"></canvas>
+    </div>
+    
+
+
+    <script src="/JS/chart.umd.js"></script>
+    <script>
+        var expenseData = JSON.parse(`<%- JSON.stringify(data) %>`);
+        let labels = expenseData.map( e => e.expense);
+        let values = expenseData.map( e => e.expenseAmount);
+
+       const colorPalette = [ "#FF5733" , "#33FF57" , "#3357FF" , "#FF33A1"]
+
+        let backCol = labels.map( (_,i)=> colorPalette[i%colorPalette.length]);
+        console.log(backCol)
+        new Chart( document.getElementById("pie"), {
+            type:"pie",
+            data:{
+                labels:labels,
+                datasets:[{
+                    data: values,
+                    backgroundColor:backCol,
+                }]
+            }
+        });
+
+    </script>
+</body>
+</html>

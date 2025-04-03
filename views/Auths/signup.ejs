@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="/CSS/login.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+
+    <% if (msg){ %>
+        <div id="error-msg"> 
+            <%= msg %> 
+        </div>
+    <% } %>
+
+    <div class="container">
+        <form action="/expense/signup" method="post" class="needs-validation" novalidate>
+        <h3>Expense Tracker</h3>
+        <input type="text" class="logInp" placeholder="Enter You Name" name="username" required>
+      
+        <input type="email" class="logInp" placeholder="Enter Your Gmail" name="email" required> <br>
+      
+        <input type="password" class="logInp" placeholder="Enter Your Password" name="password" required> <br>
+      
+            <button>SignUp</button> &nbsp;&nbsp;&nbsp;
+            <a href="/expense/login">Already Have An Account? Login</a>
+        </form>
+    </div>
+
+    <script>
+        if ( document.getElementById('error-msg').innerText != ""){
+            setTimeout( ()=>{
+                let div = document.getElementById('error-msg');
+                div.style.display = "none";
+            },3000)
+        }
+    </script>
+</body>
+</html>

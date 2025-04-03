@@ -1,0 +1,266 @@
+body{
+    margin: 0;
+    padding : 0;
+    height: 100vh;
+    background-color: #F4F4F6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* NavBar */
+#nav{
+    display: flex;
+    height: 12%;
+    /* border-bottom: 2px solid black; */
+    background-color: #2C3E50;
+    justify-content: space-between;
+}
+#logo {
+    flex-grow: 1; 
+}
+
+#nav div{
+    align-self: center;
+}
+
+#nav div h4{
+    display: inline;
+    color: #FFFFFF;
+    font-size: 1.3rem;
+}
+
+#logo{
+    margin-left: 1%;
+}
+#add{
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+#add button{
+    height: 50px;
+    width: 110px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border: 2px solid white;
+    font-size: 1.30rem;
+}
+
+#add button:hover{
+    opacity: 0.7;
+}
+
+#loginDiv, #signupDiv ,#logoutDiv{
+    margin-left: 10px;
+}
+
+#loginDiv{
+    display: flex;
+    align-self: flex-end;
+}
+
+#loginDiv{
+    display: flex;
+    align-self: flex-end;
+}
+.logoutSign{
+    height: 40px;
+    width: 80px;
+    background-color: #2C3E50;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.25rem;
+}
+.logSign{
+    height: 40px;
+    width: 80px;
+    background-color: #2C3E50;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.25rem;
+}
+
+.logSign:hover , .logoutSign:hover{
+    opacity: 0.7;
+}
+
+#signupDiv{
+    margin-right: 10px;
+}
+
+/* Container of ToolBox and Table */
+#container {
+    display: flex;
+    height: 80vh;
+}
+
+/* Expense Headers */
+#expense-list-headers{
+    background-color: #34495E;
+    color: #EAECEE;
+    margin-bottom: 1px solid black;
+    display: flex;
+    height: 40px;
+    padding: 5px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.d1{
+    width: 5%;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.d2{
+    width: 25%;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.d3{
+    width: 10%;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.d4{
+    width: 15%;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.d5{
+    width: 15%;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+
+/* Expense List */
+#expense-list{
+    background-color: #EAECEE;
+    display: flex;
+    padding: 5px;
+}
+
+#expense-table{
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 80vh;
+    padding: 10px;
+}
+
+#toolBoxContainer {
+    width: 230px;
+    position: sticky;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background: #EAECEE; 
+    padding: 10px;
+    overflow-y: auto;
+    border-right: 2px solid #34495E;
+    margin-right: 10px;
+}
+
+#table-tool-div{
+    display: flex;
+    padding:30px;
+    gap:50px;
+    background-color: #EAECEE;
+    margin: auto;
+    margin-top: 1rem;
+    border: 2px solid #34495E;
+    border-radius: 20px;
+    justify-content: center;
+    width:80%;
+    margin-right: 5px;
+}
+
+#tool-box div button{
+    width:10rem;
+    height:3rem;
+    margin-top: 0.50rem;
+    margin-bottom: 0.75rem;
+    background-color: #2C3E50;
+    border: 2px solid #34495E;
+    border-radius: 5px;
+    color: #EAECEE;
+    font-size: 1.20rem;
+}
+
+#tool-box div button:hover{
+    opacity: 0.7;
+    border: 2px solid black;
+}
+
+.btnDelete{
+    height: 2rem;
+    width: 5rem;
+    font-size: 1.15rem;
+}
+
+.btnEdit{
+    height: 2rem;
+    width: 5rem;
+    font-size: 1.15rem;
+    border: 2px solid #2C3E50;
+    border-radius: 5px;
+}
+
+.divDel{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border: 1px solid #2C3E50;
+    border-radius: 5px;
+}
+
+.expense-entry{
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 2px solid #2C3E50;
+}
+/* Search Box */
+#searchBox{
+    margin-left: 35%;
+    width: 30%;
+    height: 2rem;
+    border: 2px solid #2C3E50;
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    color: #2C3E50;
+    outline: none;
+    font-size: 1.25rem;
+    display: none;
+}
+
+#greetDiv{
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgb(106, 213, 92);
+    border: 2px solid black;
+    font-size: 1.5rem;
+    width: 50%;
+    margin-top: 1rem;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#errMsgDiv{
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgb(232, 73, 65);
+    border: 2px solid black;
+    font-size: 1.5rem;
+    width: 50%;
+    margin-top: 1rem;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

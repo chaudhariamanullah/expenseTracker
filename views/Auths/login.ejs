@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn Page</title>
+    <link rel="stylesheet" href="/CSS/login.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <form action="/expense/login" method="post">
+            <h3>Expense Tracker</h3>
+            <input type="text" class="logInp" placeholder="Enter Your Email OR Username" name="usernameOrMail"> <br>
+            <input type="password" class="logInp" placeholder="Enter Your Password" name="password"> <br>
+            <button>LogIn</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/expense/signup">Don't Have An Account? Create Now</a>
+        </form>
+    </div>
+
+
+    <% if ( msg == "Signup Successfull") { %>
+
+        <div id="error-msg" style="background-color: rgb(106, 213, 92);"> 
+            <%= msg %> 
+        </div>  
+
+    <% } else if (msg ){ %>
+
+        <div id="error-msg"> 
+            <%= msg %> 
+        </div>
+
+    <%}%>
+
+    <script>
+        if ( document.getElementById('error-msg').innerText != ""){
+            setTimeout( ()=>{
+                let div = document.getElementById('error-msg');
+                div.style.display = "none";
+            },2000)
+        }
+    </script>
+</body>
+</html>
