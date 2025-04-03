@@ -41,9 +41,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Method Override Middleware
 app.use(methodOverride("_method"));
 
-app.listen(8080, function(){
-    console.log("Hello User!")
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
+
 
 app.get("/",(req,res)=>{
    res.redirect("/expense")
