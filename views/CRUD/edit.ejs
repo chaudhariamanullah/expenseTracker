@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Page</title>
+    <link rel="stylesheet" href="/CSS/newExpense.css">
+</head>
+<body>
+    <% let date = new Date( result[0].dateAndTime) %>
+    <% date.setHours(date.getHours() + 5 , date.getMinutes() + 30) %>
+    <% let formattedDate = date.toISOString().slice(0,16) %>
+    <form action="/expense/<%=result[0].item_id%>?_method=PUT" method="post">
+        Enter Expense Name <br>
+        <input type="text" name="exName" value="<%=result[0].expense%>"> <br>
+        Enter Amount <br>
+        <input type="number" name="amt" value="<%=result[0].expenseAmount%>"> <br>
+        Enter Date <br>
+        <input type="datetime-local" name="dateAndTime" 
+        value="<%= formattedDate %>"> <br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<%- layout("./layout/boilerplate") %>
+
+    <% if (user) { %>
+
+        <% if (username) { %>
+
+            <div id="greetDiv">
+                Hello , <%= username %> !
+            </div>
+
+        <% } %>
+
+        <% if (errMsg) { %>
+
+            <div id="errMsgDiv">
+                <%= errMsg %> !
+            </div>
+
+        <% } %>
+        
+
+        <% if (expenses.length > 0) { %>
+            
+            <input type="text" id="searchBox" placeholder="Enter Expense Name">
+            <div id="container">
+            <div id="toolBoxContainer">
+                <%- include ("./partials/toolBox") %>
+            </div>
+
+            <div id="table-tool-div">
+                <%- include ("./partials/expenseTable") %>
+            </div>
+
+        </div>
+        <% } %>
+
+        <% if ( expenses.length == 0){ %>
+            <h4 style="text-align: center; font-size: 3rem; margin-top: 60px; color:#34495E">No Expense Found , Press New+ Icon To Start</h4>
+        <%}%>
+        
+    <% } %>
+
+    <% if (!user) { %>
+            <h4 style="text-align: center; font-size: 3rem; margin-top: 60px; color:#34495E">Press On New+ Icon To Start</h4>
+    <%}%>
+
+     <script src="./JS/index.js"> 
+
+     </script>      

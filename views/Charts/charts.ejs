@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/chart.css">
+    <script>
+        var daily = JSON.parse(`<%- JSON.stringify(daily) %>`);
+        var weekly = JSON.parse(`<%- JSON.stringify(weekly) %>`);
+        var monthly = JSON.parse(`<%- JSON.stringify(monthly) %>`);
+    </script>
+    
+    
+</head>
+<body>
+    <select name="sel" id="chart-select">
+        <option value="daily" selected>Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="yearly">Monthly</option>
+    </select>
+    
+    <div id="chart">
+
+        <div id="daily">
+            <canvas id="dailyChart"></canvas>
+        </div>
+    
+        <div id="weekly" style="display: none;">
+            <canvas id="weeklyChart"></canvas>
+        </div>
+    
+        <div id="monthly" style="display: none;">
+            <canvas id="monthlyChart"></canvas>
+        </div>
+    </div>
+
+    <script src="../JS/chart.umd.js"></script>
+    <script src="../JS/expenseChart.js"></script>
+    
+</body>
+</html>
