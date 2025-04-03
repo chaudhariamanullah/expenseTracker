@@ -4,12 +4,14 @@ const mysql = require("mysql2");
 const bcrypt = require('bcryptjs');
 const { v4: uuidv4 } = require('uuid'); // unique id generator
 
-const con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: 'aman1234',
-    database: "expense_tracker"
-});
+// const con = mysql.createConnection({
+//     host: "localhost",
+//     user: "root",
+//     password: 'aman1234',
+//     database: "expense_tracker"
+// });
+
+const con = mysql.createConnection(process.env.DATABASE_URL);
 
 con.connect(function(err) {
     if (err) {
