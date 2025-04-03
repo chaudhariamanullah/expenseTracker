@@ -21,6 +21,15 @@ con.connect(function(err) {
     console.log("Connected to MySQL!");
 });
 
+con.query("SELECT DATABASE();", (err, result) => {
+    if (err) {
+        console.error("Error Checking Database:", err);
+    } else {
+        console.log("Using Database:", result);
+    }
+});
+
+
 function fetchAll (user_id){
     return new Promise ( (resolve,reject)=>{
         sql = "select * from userExpense where user_id = ?";
