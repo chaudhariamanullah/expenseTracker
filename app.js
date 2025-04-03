@@ -45,6 +45,9 @@ app.listen(8080, function(){
     console.log("Hello User!")
 });
 
+app.get("/",(req,res)=>{
+   res.redirect("/expense")
+})
 
 // Home Page ("GET Request")
 app.get("/expense",isLoggedIn,(req,res)=>{
