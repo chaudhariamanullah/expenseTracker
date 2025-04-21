@@ -173,7 +173,7 @@ app.post("/expense/login", (req,res)=>{
 
     }).catch( (mes)=>{
         if ( mes == "No User Found"){
-            res.redirect("/expense/login?msg=No User Found");
+            res.redirect("/expense/login?msg=Wrong Username or Password");
 
         } else if ( mes == "Login Process Failed."){
 
@@ -181,7 +181,7 @@ app.post("/expense/login", (req,res)=>{
 
         } else {
 
-            res.redirect("/expense/login?msg=Wrong Password");
+            res.redirect("/expense/login?msg=Wrong Username or Password");
         }
     });
 
