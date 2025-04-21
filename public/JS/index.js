@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let searchBox = document.getElementById("searchBox");
 
         searchButton.addEventListener("click", ()=>{
-            if ( searchBox.style.display == "none"){
+            if ( if (window.getComputedStyle(searchBox).display === "none") ){
                 searchBox.style.display = "inline";
                 setTimeout(() => {
                 searchBox.style.opacity = "1";
