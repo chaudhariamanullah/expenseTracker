@@ -3,7 +3,8 @@
     padding: 0;
 }
 .container{
-    width:40%;
+    min-width:250px;
+    max-width:40%;
     margin: auto;
     margin-top: 5%;
     border: 3px solid #2C3E50;
