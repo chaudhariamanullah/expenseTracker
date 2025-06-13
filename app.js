@@ -197,8 +197,12 @@ app.post("/expense/signup",(req,res)=>{
     let user_id = uuidv4();
     let {username,email,password} = req.body;
     
-    if (password.length > 0)
+    if (password.length === 0) {
+    return res.redirect("/expense/signup?msg=Please Fill All Neccessary Info");
+    }
+    
     password = bcrypt.hashSync(password + process.env.PEPPER , 10);
+
 
     signup(user_id,username,email,password)
     .then( (mes)=>{
