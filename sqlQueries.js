@@ -12,7 +12,7 @@ const con = mysql.createConnection({
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     ssl: {
-        ca: fs.readFileSync('./ca.pem')
+        rejectUnauthorized: false
     }
 });
 
