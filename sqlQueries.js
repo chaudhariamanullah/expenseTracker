@@ -3,9 +3,18 @@ require("dotenv").config();
 const mysql = require("mysql2");
 const bcrypt = require('bcryptjs');
 const { v4: uuidv4 } = require('uuid'); // unique id generator
+const fs = require("fs")
 
-
-const con = mysql.createConnection(process.env.DATABASE_URL);
+const con = mysql.createConnection({
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+    ssl: {
+        ca: fs.readFileSync('./ca.pem')
+    }
+});
 
 con.connect(function(err) {
     if (err) {
@@ -116,7 +125,10 @@ function signup(user_id,username,email,password){
         }
 
         con.query(sql,[user_id,username,email,password],(err,result)=>{
-            if (err) reject("UserName or Email Already Used")
+            if (err) {
+                console.log("Signup Error:", err);  // add this
+                reject("UserName or Email Already Used");
+            }
             else resolve("Signup Succesfull")
         });
     });
