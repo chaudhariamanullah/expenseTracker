@@ -1,0 +1,13 @@
+name: Keep Aiven DB Alive
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping health endpoint
+        run: curl -fsS https://expensetracker-7upg.onrender.com/expense/health
