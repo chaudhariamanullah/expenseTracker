@@ -315,3 +315,13 @@ app.get("/getuser",isLoggedIn,authMiddleware,(req,res)=>{
         res.json({success:false, message: err});
     });
 });
+
+app.get("/expense/health",(req,res)=>{
+    getHealth()
+    .then( ()=>{
+        res.json({ active:true })
+    }) 
+    .catch( (err)=>{
+        res.json({message:"Error Checking Health"})
+    });
+});
