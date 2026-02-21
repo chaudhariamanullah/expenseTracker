@@ -235,4 +235,18 @@ function getUser(userId){
         })
     })
 }
-module.exports = {fetchAll, addExpense, deleteExpense ,editExpense, updateExpense, login, signup, fetchDaily , fetchMonthly, fetchWeekly , fetchUniqueDates, fetchPieData , exportCsv , getUser , fetchName};
+
+function checkHealth(){
+    
+    const sql = "SELECT 1=1";
+
+    return new Promise((resolve,reject)=>{
+        con.query(sql,(err,result)=>{
+            if(err) reject("Failed Health Chcek")
+            else resolve ("Health Checked")
+        })
+    })
+
+}
+
+module.exports = {checkHealth, fetchAll, addExpense, deleteExpense ,editExpense, updateExpense, login, signup, fetchDaily , fetchMonthly, fetchWeekly , fetchUniqueDates, fetchPieData , exportCsv , getUser , fetchName};
