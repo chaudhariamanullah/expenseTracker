@@ -17,7 +17,8 @@ const cors = require('cors');
 //SQL Queries Promise Function
 const { fetchAll, addExpense, deleteExpense, editExpense} = require('./sqlQueries.js');
 const { updateExpense, login, signup , fetchUniqueDates , fetchName} = require('./sqlQueries.js');
-const { fetchDaily , fetchWeekly , fetchMonthly , fetchPieData , exportCsv , getUser} = require("./sqlQueries.js")
+const { fetchDaily , fetchWeekly , fetchMonthly , fetchPieData , exportCsv , getUser} = require("./sqlQueries.js");
+const { checkHealth } = require("./sqlQueries.js");
 
 //Custom Middlewares
 const {authMiddleware,isLoggedIn} = require('./middlewares');
@@ -317,7 +318,7 @@ app.get("/getuser",isLoggedIn,authMiddleware,(req,res)=>{
 });
 
 app.get("/expense/health",(req,res)=>{
-    getHealth()
+    checkHealth()
     .then( ()=>{
         res.json({ active:true })
     }) 
